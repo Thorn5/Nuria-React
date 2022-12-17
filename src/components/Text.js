@@ -1,5 +1,5 @@
 import ClassComponent from "./ClassComponent"
-import Button from "./Button";
+import Button from "./Button/Button";
 
 const Text = () => {
     
@@ -39,12 +39,20 @@ const Text = () => {
   return (
     <div>
         <div>hello I am text component</div>
+
+        <div>{question}</div>
+
+        {/* Iterate an array of objects and render div or each one */}
+        {students.map((student => (
+            <div>{student.name}</div>
+        )))}
+
         {/* Iterate an array of objects and pass data as props to component */}
-        {students.map((something => (
+        {students.map((student => (
             <Button 
-                key={something.id}
-                student={something}
-                studentName={something.name}
+                key={student.id}
+                student={student}
+                studentName={student.name}
                 handleClick={handleClick}
             />
         )))}
