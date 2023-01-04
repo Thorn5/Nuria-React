@@ -27,7 +27,7 @@ export default class ClassComponent extends Component {
     ]
 
     const handleClick = (name) => {
-        console.log(name, "clicked");
+        alert(name, "clicked");
     }
 
     return (

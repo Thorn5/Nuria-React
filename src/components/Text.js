@@ -8,11 +8,11 @@ const Text = () => {
     const status = true;
 
     const handleClickSimple = () => {
-        console.log("clicked");
+        alert("clicked");
     }
 
     const handleClick = (name) => {
-        console.log(`${name} has been clicked`);
+       alert(`${name} has been clicked`);
     }
 
     const students = [
@@ -41,6 +41,7 @@ const Text = () => {
         <div>hello I am text component</div>
 
         <div>{question}</div>
+        <button onClick={handleClickSimple}>Click me!</button>
 
         {/* Iterate an array of objects and render div or each one */}
         {students.map((student => (
@@ -61,7 +62,7 @@ const Text = () => {
         {/* Ternary */}
         {status ? <div>Yes!</div> : <div>No</div>}
         <ClassComponent />
-        <button onClick={handleClickSimple}>Click me!</button>
+        
     </div>
     
   )
