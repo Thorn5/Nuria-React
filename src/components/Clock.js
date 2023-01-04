@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import Input from './Input';
 
 const Clock = () => {
     
  const [clock, setClock] = useState(new Date().toLocaleTimeString());
+ const [value, setValue] = React.useState("");
 
  const tick = () => {
     setClock(new Date().toLocaleTimeString())
  };
+
+ const handleChange = (newValue) => {
+    setValue(newValue);
+}
 
  useEffect(() => {
     const myTimer = setInterval(tick, 1000)
@@ -19,7 +25,9 @@ const Clock = () => {
   return (
     <div>
         <h2>Clock Function Component</h2>
-        It is {clock}
+        <p>It is {clock}</p>
+        {/* Update the state of parent component in child component */}
+        <Input value={value} handleChange={handleChange} />
     </div>
   )
 }
