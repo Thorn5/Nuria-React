@@ -29,6 +29,7 @@ const Clock = () => {
         <h2>Clock Function Component</h2>
         <p>It is {clock}</p>
         {/* Update the state of parent component in child component */}
+        <h2>Check the console to see how the value is updated!</h2>
         <Input value={value} handleChange={handleChange} />
     </div>
   )
