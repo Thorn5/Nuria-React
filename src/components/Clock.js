@@ -6,6 +6,8 @@ const Clock = () => {
  const [clock, setClock] = useState(new Date().toLocaleTimeString());
  const [value, setValue] = React.useState("");
 
+ console.log('input value', value);
+
  const tick = () => {
     setClock(new Date().toLocaleTimeString())
  };
