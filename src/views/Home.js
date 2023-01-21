@@ -1,11 +1,9 @@
 import React from 'react';
-import GoBack from '../components/GoBack';
 
 const Home = () => {
   return (
     <div>
-        <p>Home component</p>
-        <GoBack />
+        <p>GITHUB ISSUES HOME</p>
     </div>
   )
 }
