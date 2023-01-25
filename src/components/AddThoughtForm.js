@@ -25,7 +25,7 @@ console.log(props, 'props');
    }     
   
   return (
-    <form className="AddThoughtForm"  onSubmit={handleSubmit} >
+    <form className="AddThoughtForm" onSubmit={handleSubmit} >
       <input
         type="text"
         aria-label="What's on your mind?"
