@@ -15,7 +15,7 @@ const Header = ({ cart }) => {
             🛒
           </span>
         </div>
-        <span> {getTotalItems()} </span>
+        <span> {getTotalItems(cart)} </span>
       </div>
     </div>
   );

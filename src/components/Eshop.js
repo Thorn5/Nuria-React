@@ -1,9 +1,10 @@
+import {useState} from 'react';
 import ProductList from "./ProductList";
 import Header from "./Header";
 import ShoppingCart from "./ShoppingCart";
 
 const Eshop = () => {
-  const products = [
+  const [products] = useState([
     {
       sku: 1,
       stock: 10,
@@ -28,28 +29,19 @@ const Eshop = () => {
         "https://d1eh9yux7w8iql.cloudfront.net/product_images/338084_7fcba852-8e68-44da-97d1-a10b74a1349f.jpg",
       price: 1300
     }
-  ];
+    ]);
 
-  const cart = [
-    {
-      sku: 1,
-      qty: 2,
-      name: "iPhone 14 Pro Max",
-      price: 1500
-    },
-    {
-      sku: 3,
-      qty: 1,
-      name: "iPad Pro",
-      price: 1300
-    }
-  ];
+    
+
+  const [cart, setCart] = useState([]);
+
+  console.log(cart, 'cart');
 
   return (
     <>
       <Header cart={cart} />
-      <ProductList products={products} cart={cart} />
-      <ShoppingCart cart={cart} />
+      <ProductList products={products} cart={cart} setCart={setCart} />
+      <ShoppingCart setCart={setCart} cart={cart} />
     </>
   );
 };

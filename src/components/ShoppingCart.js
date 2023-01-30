@@ -1,6 +1,6 @@
 import { decrease, increase, getTotalPrice } from "../utils";
 
-const ShoppingCart = ({ cart }) => {
+const ShoppingCart = ({ cart, setCart }) => {
   return cart.length ? (
     <>
       {cart.map((product) => (
@@ -10,9 +10,9 @@ const ShoppingCart = ({ cart }) => {
             Unit price: $ {product.price} | Qty: {product.qty}
           </div>
           <div className="cart-buttons">
-            <button onClick={() => decrease(cart, product)}>-</button>
+            <button onClick={() => setCart(decrease(cart, product))}>-</button>
             <span>{parseFloat(product.price * product.qty).toFixed(2)} €</span>
-            <button onClick={() => increase(cart, product)}>+</button>
+            <button onClick={() => setCart(increase(cart, product))}>+</button>
           </div>
         </div>
       ))}
