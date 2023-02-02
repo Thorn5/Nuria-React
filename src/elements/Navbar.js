@@ -5,17 +5,17 @@ const Navbar = () => {
   return (
     <div>
         <nav>
-            <ul>
-                <li>
+            <ul className='navbar'>
+                <div>
                     <NavLink to='/'>
-                        Latest news
+                        Fetch news
                     </NavLink>
-                </li>
-                <li>
+                </div>
+                <div>
                     <NavLink to='/react-news'>
                         React news
                     </NavLink>
-                </li>
+                </div>
             </ul>
         </nav>
         <Outlet/>

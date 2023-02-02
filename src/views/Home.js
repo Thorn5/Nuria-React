@@ -1,38 +1,27 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import useFetchData from '../hooks/useFetchData';
+import useToggle from '../hooks/useToggle';
 
 const Home = () => {
-    const { data, loading, error } = useFetchData('http://hn.algolia.com/api/v1/search?query=bar');
-    const [fetchedData, setFetchedData] = useState([]);
-    const [loadingData, setLoading] = useState(loading);
-    const [errorFetch, setError] = useState(error);
-
-    useEffect(() => {
-        data ? setFetchedData(data.hits) : setFetchedData(null)
-        setLoading(loading);
-        setError(error);
-      }, [data, loading, error]);
-
-      console.log(fetchedData);
-
-      if (loadingData) {
-        return <p>Loading...</p>;
-      }
-
-      if (errorFetch) {
-        return <p>An error occurred: {error.message}</p>;
-      }
+  const {value, toggle} = useToggle(true);
+  const {data, loading, error} = useFetchData(`http://hn.algolia.com/api/v1/search?query=fetch`);
 
   return (
     <div>
-        Latest news
-        <ul>
-            {fetchedData !== null ? fetchedData.map(item => (
-                <li key={item.objectID}>{item.title}</li>
-            )): null}
-        </ul>
+      <h1>Fetch news</h1>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+          <div>
+            {data && !error ? data.hits.map((hit) => (
+              <div key={hit.objectID}>{hit.title}</div>
+            )) : <p>Error here</p> }
+          </div>
+      )}
+      <button onClick={toggle}>Toggle</button>
+      {value === true ? <p>The toggle is on</p> : <p>The toggle is off</p>}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -14,7 +14,6 @@ function App() {
             <Route index element={<Home/>} />
             <Route path="react-news" element={<ReactNews />} />
           </Route>
-
         </Routes>
     </>
     </div>
