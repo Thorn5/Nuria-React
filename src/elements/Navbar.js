@@ -8,12 +8,7 @@ const Navbar = () => {
             <ul className='navbar'>
                 <div>
                     <NavLink to='/'>
-                        Fetch news
-                    </NavLink>
-                </div>
-                <div>
-                    <NavLink to='/react-news'>
-                        React news
+                        IMG FLIP
                     </NavLink>
                 </div>
             </ul>

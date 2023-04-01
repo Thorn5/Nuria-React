@@ -44,3 +44,13 @@
   display: flex;
   gap: 1em;
 }
+
+.meme-image-container {
+  position: relative;
+}
+
+.meme-factory {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
