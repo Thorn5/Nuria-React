@@ -45,12 +45,10 @@
   gap: 1em;
 }
 
-.meme-image-container {
-  position: relative;
+.navbar-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
-.meme-factory {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+

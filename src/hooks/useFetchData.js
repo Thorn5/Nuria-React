@@ -9,7 +9,8 @@ const useFetchData = (url) => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-            const response = await fetch(url); 
+            const backend_url = process.env.BACKEND_URL;
+            const response = await fetch(backend_url + url); 
             const data = await response.json();
             setData(data)
         } catch(whatever){

@@ -6,9 +6,19 @@ const Navbar = () => {
     <div>
         <nav>
             <ul className='navbar'>
-                <div>
+                <div className='navbar-links'>
+                    
+                    <NavLink to='/login'>
+                        Login
+                    </NavLink>
+                    <NavLink to='/signup'>
+                        Signup
+                    </NavLink>
                     <NavLink to='/'>
-                        IMG FLIP
+                        Home
+                    </NavLink>
+                    <NavLink to='/new_film'>
+                        Add new film
                     </NavLink>
                 </div>
             </ul>
