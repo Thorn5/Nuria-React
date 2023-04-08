@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { CounterContext } from '../context/CounterProvider';
+
 
 const FilmForm = () => {
   const [name, setTitle] = useState('');
@@ -8,6 +10,8 @@ const FilmForm = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   const api_url = process.env.REACT_APP_BACKEND_URL;
+  const {incrementCounter, decrementCounter, counter} = useContext(CounterContext);
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -66,6 +70,9 @@ const FilmForm = () => {
           <button type="submit">Submit</button>
         </form>
       )}
+      <button onClick={incrementCounter}>Increment</button>
+      {counter}
+      <button onClick={decrementCounter}>Decrement</button>
     </div>
   );
 };
